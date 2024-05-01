@@ -41,7 +41,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
       {/* Footer */}
       <footer>
         <button style={{display:'flex',justifyContent: 'space-between',alignItems: 'center'}} onClick={toggleExpiredVisibility} className="font-epilogue font-semibold text-[18px] text-white text-left">
-           Expired Campaigns ({campaigns.filter((campaign) => daysLeft(campaign.deadline) <= 0 || campaign.amountCollected < campaign.target).length})  <span className="shine" style={{ marginLeft: '10px' }}>{ showExpired ? <MdOutlineKeyboardDoubleArrowUp /> : <MdOutlineKeyboardDoubleArrowDown/>} </span>
+           Expired Campaigns ({campaigns.filter((campaign) => daysLeft(campaign.deadline) <= 0 && parseFloat(campaign.amountCollected) <= parseFloat(campaign.target) || campaign.title == "test").length})  <span className="shine" style={{ marginLeft: '10px' }}>{ showExpired ? <MdOutlineKeyboardDoubleArrowUp /> : <MdOutlineKeyboardDoubleArrowDown/>} </span>
         </button>
         {showExpired && (
           <>

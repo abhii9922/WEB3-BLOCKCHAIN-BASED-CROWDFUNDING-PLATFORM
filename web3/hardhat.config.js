@@ -36,7 +36,7 @@ module.exports = {
     defaultNetwork: 'sepolia',
     networks: {
       hardhat: {},
-      goerli: {
+      sepolia: {
         url: 'https://rpc2.sepolia.org',
         accounts: [`0x${process.env.PRIVATE_KEY}`],
       }
