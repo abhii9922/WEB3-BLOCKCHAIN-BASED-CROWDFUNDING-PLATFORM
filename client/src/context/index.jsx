@@ -11,7 +11,8 @@ export const StateContextProvider = ({ children }) => {
   const { mutateAsync: createCampaign } = useContractWrite(contract, 'createCampaign');
 
   const address = useAddress();
-  const connect = useConnect();
+  const connect = useMetamask();
+  // const connect = useMetamask();
 
   const publishCampaign = async (form) => {
     try {
